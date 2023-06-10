@@ -77,10 +77,6 @@ function tableExists($table){
               return false;
       }
   }
- /*--------------------------------------------------------------*/
- /* Login with the data provided in $_POST,
- /* coming from the login form.
-/*--------------------------------------------------------------*/
   function authenticate($username='', $password='') {
     global $db;
     $username = $db->escape($username);
@@ -193,7 +189,7 @@ function tableExists($table){
             redirect('index.php', false);
       //if Group status Deactive
      elseif($login_level['group_status'] === '0'):
-           $session->msg('d','Este nivel de usaurio esta inactivo!');
+           $session->msg('d','Este nivel de usuario esta inactivo!');
            redirect('home.php',false);
       //cheackin log in User level and Require level is Less than or equal to
      elseif($current_user['user_level'] <= (int)$require_level):
